@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  db:
+    container_name: shop-postgres
+    image: postgres
+#    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+volumes:
+  pg-data:
+    external: false
